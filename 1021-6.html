@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .one{
+            width:300px;
+            height:150px;
+            background:aqua;
+            margin:50px;
+            border:3px solid black;
+            padding:20px;
+        }
+        .two{
+            width:200px;
+            height:100px;
+            background:blue;
+            margin:30px;
+            border:1px solid black;
+            padding:10px;
+            /* padding과 border값을 포함하여 너비와 높이 적용 */
+            box-sizing:border-box
+        }
+        /*인라인 요소는 너비와 높이가 적용 안됨*/
+        .first{
+            width:300px;
+            height:300px;
+            background:pink;
+        }
+        a {
+            width:300px;
+            height:300px;
+            background:gray;
+        }
+        /*이미지 태그는 인라인 요소이지만 너비와 높이가 적용됨 */
+        img {
+            width:100px;
+            height:100px;
+            background:gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one">첫번째 박스</div>
+        <div class="two">두번째 박스</div>
+        <span class="first">span 태그1</span>
+        <span class="second">span 태그2</span>
+        <a href="#">a태그</a>
+        <img src="img/1.jpg"/>
+    </div>
+</body>
+</html>
