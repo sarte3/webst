@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        #one {
+            width:200px;
+            height:150px;
+            background:red;
+        }
+        #container{
+            height:200px;
+            background:pink;
+        }
+        #two {
+            width:10%;
+            height:150px;
+            background:tomato;
+            float:left;
+            text-align:center; /*세로 정렬*/
+            line-height:150px;
+        }
+        #three {
+            width:30%;
+            height:150px;
+            background:orange;
+            float:left;
+        }
+        #four {
+            width:30%;
+            height:150px;
+            background:green;
+            float:left;
+        }
+        #container::after {
+            content:'';
+            clear:both;
+        }
+        #five {
+            width:200px;
+            height:150px;
+            background:blue;
+            clear:both;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="one">div1</div>
+    <div id="container">
+        <div id="two"><span>div2</span></div>
+        <div id="three">div3</div>
+        <div id="four">div4</div>
+    </div>
+    <div id="five">div5</div>
+</body>
+</html>

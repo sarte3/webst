@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    header{
+        float:left;
+    }
+    header img{
+        width:50px;
+        height:75px;
+        margin:10px;
+    }
+    nav{
+        float:left;
+        width:90%;
+        margin:auto;
+    }
+    nav ul{
+        height:50px;
+        background:LightGray;
+    }
+    nav li{
+        list-style-type:none;
+        display:inline;
+        line-height:50px;
+        text-align:center;
+        padding:10px;
+    }
+    nav::after{
+        content:'';
+        clear:both;
+    }
+    #container{
+        clear:both;
+    }
+    #page{
+        margin: 80px 280px;
+    }
+    #sec {
+        float:left;
+        padding:20px 50px;
+        border:1px solid gray;
+        margin:10px;
+    }
+    #sec img{
+        width:150px;
+        height:200px;
+    }
+    #asi {
+        float:left;
+        padding:30px;
+        border:1px solid gray;
+        margin:10px;
+    }
+    #asi p{
+        text-align:center;
+    }
+    #asi::after{
+        content:'';
+        clear:both;
+    }
+    hr{
+        clear:both;
+    }
+    footer{
+        clear:both;
+        margin: 10px 280px;
+    }
+    #f1{
+        float:left;
+        width:20%;
+    }
+    #f2{
+        float:left;
+        width:40%;
+    }
+    #f3{
+        float:left;
+        width:40%;
+    }
+</style>
+<body>
+<div id="page">
+<header>
+<img src="img/logo.jpg">
+</header>
+<nav>
+    <ul>
+        <li>About</li>
+        <li>도서 시리즈</li>
+        <li>전체 도서 목록</li>
+        <li>저자/역자 모집</li>
+        <li>도서 관련 문의</li>
+    </ul>
+</nav>
+<div id="container">
+    <section id="sec">
+        <img src="img/b1.jpg">
+        <img src="img/b2.jpg">
+        <img src="img/b3.jpg">
+        <img src="img/b4.jpg">
+    </section>
+    <aside id="asi">
+        <p>
+            <img src="img/4.jpg"><br/>
+            저자/역자 모집
+            <hr>
+            <img src="img/5.jpg"><br/>
+            도서 관련 문의
+        </p>
+    </aside>
+</div>
+</div>
+<hr>
+<footer>
+    <div id="f1">
+        <h4>위키북스</h4>
+         저자/역자 모집<br/>
+         wikibook@wikibook.co.kr<br/>
+        <hr>
+        <h4>찾아오시는 길</h4>
+        경기도 파주시 문발로 115 세종출판벤처타운 311호 위키북스<br/>
+        115, Munbal-ro, Paju-si, Gyeonggi-do, 10881, Rep. of KOREA<br/>
+        <hr>
+        <h4>연락처</h4>
+        Tel: 031-955-3658, 3659</br>
+        Fax: 031-955-3660</br>
+        <hr>
+        <h4>이메일</h4>
+        wikibook@wikibook.co.kr<br/>
+        <hr>
+        개인정보취급방침
+    </div>
+    <div id="f2">
+        트위터
+    </div>
+    <div id="f3">
+        페이스북
+    </div>
+</footer>
+
+</body>
+</html>
