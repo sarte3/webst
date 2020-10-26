@@ -11,14 +11,15 @@ a {
     text-decoration:none;
 }
 .header{
-    background:MediumSeaGreen;
+    background:#004d00;
+    height:70px;
 }
 .header h1{
     color:white;
 }
-.container{
+.container, .container-float{
     max-width:1400px;
-    background:#004d00;
+    /*background:#004d00;*/
     margin:0 auto;
     position:relative;
     height:50px;
@@ -43,26 +44,159 @@ ul {
 header a {
     color:white;
     padding:10px;
+    font-weight:700;
 }
 header a:hover{
     color:#00cc99;
 }
 .main{
-    background:DodgerBlue;
+    /*background:DodgerBlue;*/
 }
+/* hero 영역 */
 .hero{
-    background:Orange;
+    /*background:Orange;*/
+    text-align:center;
+    padding:50px 0;
+    /*아랫줄 선긋기*/
+    border-bottom:1px solid #00ff80;
+    height:280px;
+}
+.hero1{
+    font-size:3.5rem;
+    width:700px;
+    margin:30px auto;
+}
+.hero2{
+    display:block; /* 크기가 적용되도록 변경 */
+    width:300px;
+    background:#44B78B;
+    margin:10px auto; /* 가운데 정렬 */
+    color:white;
+    text-decoration:none;
+    padding:20px 10px; /* 버튼처럼 */
+    border-radius:5px; /* 테두리 둥글게 */
+    font-size:2rem;
+    font-weight:900;
+}
+.hero2:hover{
+    background:#00cc99;
 }
 .main-content{
-    background:Tomato;
+    /* background:Tomato; */
     float:left;
     width:70%;
 }
-.side-content{
-    background:SlateBlue;
-    float:right;
-    width:30%;
+.main-title {
+    font-size:3rem;
 }
+.mailing {
+    /* background:pink; */
+    float:left;
+    width:50%;
+}
+.mailing-title {
+    color:#44B78B;
+}
+.mailing-title a:visited {
+    color:#44B78B;
+}
+.mailing-title a:hover {
+    color:#00cc99;
+}
+/*버튼의 위치 기준 */
+.frm1 {
+    position:relative;
+    margin:10px
+}
+.btn1 {
+    position:absolute; /* 기준이 되는 부모의 position 속성도 변경할 것 */
+    top:0;
+    right:50px;
+    border:0;
+    background:transparent; /* 바탕색 투명 */
+    cursor:pointer; /* 마우스 올리면 손가락*/
+}
+input {
+    width:75%;
+    height:30px;
+    padding:5px 80px 5px 5px;
+    border:1px solid #44B78B;
+}
+.mailing-layout::after {
+    content:'';
+    display:block;
+    clear:both;
+}
+.main-end {
+    clear:both;
+}
+/* 1) main-content와 side-content의 부모로서 자리하지 못함. 부모에 가상요소를 주어 해제 */
+.container-float::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.side-content{
+    background:#F0F0F0;
+    float:right;
+    width:25%;
+    padding:20px;
+}
+.side-cta {
+    display:block; /* 크기가 적용되도록 변경 */
+    width:80%;
+    background:#44B78B;
+    margin:10px auto; /* 가운데 정렬 */
+    color:white;
+    text-decoration:none;
+    padding:20px 10px; /* 버튼처럼 */
+    border-radius:5px; /* 테두리 둥글게 */
+    font-size:1.5rem;
+    font-weight:900;
+    text-align:center;
+}
+.side-cta:hover{
+    background:#00cc99;
+}
+.more {
+    display:block;
+    color:#44B78B;
+    text-align:center;
+}
+.info-latest-news{
+    padding:0 30px;
+}
+.infos-title {
+    border-bottom:1px solid gray;
+    padding:10px 0 10px 0;
+}
+.news-title{
+    color:#44B78B;
+}
+.news-title a:visited{
+    color:#44B78B;
+}
+.news-title:hover{
+    color:#00cc99;
+}
+.news-meta {
+    color:gray;
+}
+.news-meta span {
+    font-weight:900;
+}
+.info-latest-news a {
+    color:#44B78B;
+    font-weight:900;
+}
+.info-latest-news a:hover{
+    color:#00cc99;
+}
+.info-latest-news a:visited{
+    color:#44B78B;
+}
+/* container-float가 자식의 높이를 완벽히 가짐을 확인 */
 .footer{
     background:Violet;
+    clear:both; /* 2) main-content와 side-content의 float 영역으로부터 독립적으로 나타냄 */
 }
