@@ -2,7 +2,7 @@
 1) 웹폰트
 2) 기본스타일이 브라우저별로 조금씩 다름, 이를 최소화 하기 위한 기법
 css reset
-css normalize
+css normalize 다운로드 후 <link rel="stylesheet" href="normalize.css">
 */
 
 html {
@@ -15,16 +15,20 @@ body {
     font-size:1.5rem;
     font-family: 'Roboto', sans-serif;
 }
+::selection{
+    background:#C9F0DD;
+}
 a {
     text-decoration:none;
 }
 .header{
-    background:#004d00;
+    background:#0C4B33;
     height:70px;
 }
 .header h1{
     color:white;
 }
+
 .container, .container-float{
     max-width:1400px;
     /*background:#004d00;*/
@@ -33,12 +37,21 @@ a {
     height:50px;
     padding:10px 0;
 }
+.container span{
+    position:absolute;
+    top:18px;
+    left:140px;
+    margin:0;
+    width:250px;
+    color:#44B78B;
+
+}
 .logo {
     position:absolute;
     top:0;
     left:0;
     margin:0;
-    padding:10px 0 0 20px;
+    padding:15px 0 0 20px;
 }
 .nav {
     text-align:right;
@@ -95,6 +108,9 @@ header a:hover{
     float:left;
     width:60%;
 }
+.main-content img{
+
+}
 .main-title {
     font-size:3rem;
 }
@@ -149,10 +165,11 @@ input {
     clear:both;
 }
 .side-content{
-    background:#F0F0F0;
+    background:#f8f8f8;
     float:right;
-    width:33%;
-    padding:20px;
+    width:30%;
+    padding:20px 50px;
+    height:800px;
 }
 .side-hero2 {
     display:block; /* 크기가 적용되도록 변경 */
@@ -177,6 +194,7 @@ input {
     display:block;
     color:#44B78B;
     text-align:center;
+    padding:10px;
 }
 .more::after {
     content:' >';
@@ -186,7 +204,7 @@ input {
 }
 .infos-title {
     border-bottom:1px solid gray;
-    padding:10px 0 10px 0;
+    padding:10px 0 20px 0;
 }
 .news-title a{
     color:#44B78B;
@@ -219,7 +237,51 @@ a {
 
 
 /* container-float가 자식의 높이를 완벽히 가짐을 확인 */
-.footer{
-    background:Violet;
+.footer1{
     clear:both; /* 2) main-content와 side-content의 float 영역으로부터 독립적으로 나타냄 */
+}
+.fcontainer1{
+    clear:both;
+    background:#44B78B;
+    height:350px;
+    color:white;
+    margin:0;
+}
+.fcontainer1 h3{
+    padding:10px;
+}
+.fcontainer1 ul{
+    padding:0
+}
+.fcontainer1 li{
+    padding:10px;
+}
+.fcontent1 a{
+    color:white;
+}
+.fcontent1 a:hover{
+    text-decoration:underline;
+}
+
+.fcontent1{
+    float:left;
+    width:25%;
+}
+.fcontainer2{
+    clear:both;
+    background:#0C4B33;
+    margin:0;
+    height:130px;
+    color:#2B8C67;
+}
+.fcontent2{
+    float:left;
+    width:30%;
+    padding:10px;
+}
+.fcontent2 h1{
+    color:white;
+}
+.fcontainer2 p{
+    clear:both;
 }
