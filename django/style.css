@@ -1,3 +1,10 @@
+/*
+1) 웹폰트
+2) 기본스타일이 브라우저별로 조금씩 다름, 이를 최소화 하기 위한 기법
+css reset
+css normalize
+*/
+
 html {
     font-size:10px;
 }
@@ -6,6 +13,7 @@ html {
 }
 body {
     font-size:1.5rem;
+    font-family: 'Roboto', sans-serif;
 }
 a {
     text-decoration:none;
@@ -78,13 +86,14 @@ header a:hover{
     font-size:2rem;
     font-weight:900;
 }
+/*.hero2.main-hero2 붙여서 쓰는 경우, .hero2와 .main-hero2이 모두 있는 경우 */
 .hero2:hover{
     background:#00cc99;
 }
 .main-content{
     /* background:Tomato; */
     float:left;
-    width:70%;
+    width:60%;
 }
 .main-title {
     font-size:3rem;
@@ -95,6 +104,9 @@ header a:hover{
     width:50%;
 }
 .mailing-title {
+    color:#44B78B;
+}
+.mailing-title a {
     color:#44B78B;
 }
 .mailing-title a:visited {
@@ -117,7 +129,7 @@ header a:hover{
     cursor:pointer; /* 마우스 올리면 손가락*/
 }
 input {
-    width:75%;
+    width:65%;
     height:30px;
     padding:5px 80px 5px 5px;
     border:1px solid #44B78B;
@@ -139,12 +151,12 @@ input {
 .side-content{
     background:#F0F0F0;
     float:right;
-    width:25%;
+    width:33%;
     padding:20px;
 }
-.side-cta {
+.side-hero2 {
     display:block; /* 크기가 적용되도록 변경 */
-    width:80%;
+    width:90%;
     background:#44B78B;
     margin:10px auto; /* 가운데 정렬 */
     color:white;
@@ -155,6 +167,9 @@ input {
     font-weight:900;
     text-align:center;
 }
+.side-hero2:hover{
+    background:#00cc99;
+}
 .side-cta:hover{
     background:#00cc99;
 }
@@ -163,6 +178,9 @@ input {
     color:#44B78B;
     text-align:center;
 }
+.more::after {
+    content:' >';
+}
 .info-latest-news{
     padding:0 30px;
 }
@@ -170,7 +188,7 @@ input {
     border-bottom:1px solid gray;
     padding:10px 0 10px 0;
 }
-.news-title{
+.news-title a{
     color:#44B78B;
 }
 .news-title a:visited{
@@ -195,6 +213,11 @@ input {
 .info-latest-news a:visited{
     color:#44B78B;
 }
+a {
+    color:#44B78B;
+}
+
+
 /* container-float가 자식의 높이를 완벽히 가짐을 확인 */
 .footer{
     background:Violet;
