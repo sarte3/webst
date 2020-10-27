@@ -78,7 +78,7 @@ header a:hover{
     text-align:center;
     padding:50px 0;
     /*아랫줄 선긋기*/
-    border-bottom:1px solid #00ff80;
+    border-bottom:1px solid #00cc99;
     height:280px;
 }
 .hero1{
@@ -189,6 +189,13 @@ input {
 .side-cta:hover{
     background:#00cc99;
 }
+.infos-support img{
+    float:left;
+}
+.infos-support p{
+    padding:20px 20px 20px 100px;
+}
+
 .more {
     display:block;
     color:#44B78B;
@@ -202,6 +209,7 @@ input {
     padding:0 30px;
 }
 .infos-title {
+    clear:both;
     border-bottom:1px solid gray;
     padding:10px 0 20px 0;
 }
