@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제어문</title>
+</head>
+<body>
+<pre>
+    if (조건) { 실행내용 }
+</pre>
+<script>
+    /* score = prompt('점수는 = ');
+    //score = parseInt(prompt('점수는 = ')); //정수형, 소수점 자리 절삭
+    //score = Number(prompt('점수는 = '));
+    //score = parseFloat(prompt('점수는 = '));
+    document.write(typeof score, score); //string
+    if(isNaN(score)){ //Not a Number 이면
+        document.write('잘못된 입력, 숫자를 입력하세요');
+    }else{
+        if (score>=90 && score <= 100){
+            document.write('A학점');
+        }else if (score>=80 && score < 90) {
+            document.write('B학점');
+        }
+        else if(score > 100 || score < 0){
+            document.write('잘못된 점수');
+        }else {
+            document.write('C학점');
+        }
+    }
+    */
+    result = confirm('파일을 업로드 하시겠어요?');
+    if (result) {
+        document.write('업로드 완료');
+    }
+    else {
+        document.write('다시 등록');
+    }
+</script>
+</body>
+</html>
