@@ -1,0 +1,75 @@
+html {
+    font-size: 10px;
+}
+body {
+    font-size:2rem;
+}
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+#header {
+    background: white;
+    height: 100px;
+    position: relative;
+    border: 1px solid black;
+}
+.logo {
+    position:absolute;
+    top: 20px;
+    left: 10px;
+}
+#nav {
+    background: deeppink;
+}
+#nav::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+li {
+    display: inline;
+    padding: 10px 20px;
+}
+#menu {
+    background: hotpink;
+    float: left;
+    width: 80%;
+}
+#search {
+    background: lightpink;
+    float: left;
+    width: 20%;
+}
+#content {
+    clear:both;
+    background: chocolate;
+}
+#laside {
+    float: left;
+    width: 15%;
+    background: blueviolet;
+}
+#main {
+    float: left;
+    width: 65%;
+    background: brown;
+}
+#raside {
+    float: left;
+    width: 20%;
+    background: burlywood;
+}
+#content::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+#footer {
+    clear: both;
+    background: coral;
+}
