@@ -87,3 +87,16 @@ footer li{
     float:left;
     width:45%;
 }
+
+.header::after{
+    content: '';
+    clear: both;
+}
+.main::after{
+    content: '';
+    clear: both;
+}
+.footer::after{
+    content: '';
+    clear: both;
+}
