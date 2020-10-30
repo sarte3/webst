@@ -1,0 +1,17 @@
+.container{
+    max-width: 1400px;
+    margin: 0px auto;
+}
+table{
+    margin: 0px auto;
+}
+table,th,td{
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+td {
+    padding: 10px;
+}
+.title, .last {
+    text-align: center;
+}
