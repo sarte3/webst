@@ -8,9 +8,13 @@
             document.member.id.focus();
         }
 
+        function emailChk(){
+            document.member.id3.value=document.member.email[document.member.email.selectedIndex].value;
+        }
+
         function frmchk(){
             frm = document.member;
-        /*    if (frm.id.value.length<5) {
+            if (frm.id.value.length<5) {
                 alert('아이디는 5글자 이상입니다');
                 frm.id.focus();
                 return false;
@@ -28,18 +32,45 @@
             }
 
             //alert(frm.email.selectedIndex);
-            if(frm.email.selectedIndex<1){
+            /*if(frm.email.selectedIndex<1){
               alert('이메일을 정확히 하세요');
               return false;
-            }
-            */
-            //@와 .체크 코드 필요
-            if(frm.email.selectedIndex<1 && frm.id3.value.length<5){
-                alert('이메일을 정확히 하세요');
+            }*/
+
+            //.체크 코드 필요
+            if(frm.id3.value.indexOf('.')==-1){
+                alert('이메일 형식을 맞춰주세요');
                 return false;
             }
             //alert(frm.email[frm.email.selectedIndex].value);
-            frm.id3.value=frm.email[frm.email.selectedIndex].value;
+
+            //취미 선택 여부 검사
+            //alert('취미의 길이 = '+frm.sel1.length)
+            sel1Chk = false;
+            for(i=0;i<frm.sel1.length;i++){
+                if(frm.sel1[i].checked){
+                    sel1Chk = true;
+                    break;
+                }
+            }
+
+            if(!sel1Chk){
+                alert('취미를 1개이상 선택해주세요');
+                return false;
+            }
+
+            //직업 선택 유무 확인
+            if(frm.job.selectedIndex<1){
+                alert('직업을 선택하세요');
+                return false;
+            }
+
+            if(confirm('가입하시겠습니까?')){
+                frm.submit();
+            }
+
+
+
         }
     </script>
 </head>
@@ -87,7 +118,7 @@
             <td width="80%">
                 <input type = "text" name = "email-Id" maxlength="10">@
                 <input type = "text" name = "id3" >
-                <select name ="email">
+                <select name ="email" onchange="emailChk()">
                     <option value="" selected>직접입력</option>
                     <option value="naver.com" >naver.com</option>
                     <option value="gmail.com" >gmail.com</option>
@@ -96,16 +127,15 @@
             </td>
         </tr>
         <tr>
-            <td width="20%">사용자이름</td>
+            <td width="20%">취미</td>
             <td width="80%">
-                    <input type="radio" name="sel1" value="1">등산
-                    <input type="radio" name="sel1" value="2">낚시
-                    <input type="radio" name="sel1" value="2">여행
-                    <input type="radio" name="sel1" value="2">독서
-                    <input type="radio" name="sel1" value="2">기타
-                </td>
-            </tr>
-
+                <input type="checkbox" name="sel1" value="등산">등산
+                <input type="checkbox" name="sel1" value="낚시">낚시
+                <input type="checkbox" name="sel1" value="여행">여행
+                <input type="checkbox" name="sel1" value="독서">독서
+                <input type="checkbox" name="sel1" value="기타">기타
+            </td>
+        </tr>
         <tr>
             <td width="20%">주소</td>
             <td width="80%">
@@ -116,7 +146,7 @@
             <td width="20%">직업</td>
             <td width="80%">
                 <select name ="job">
-                    <option value="select1" selected>직접입력</option>
+                    <option value="select1" selected>선택하세요</option>
                     <option value="java" >자바개발자</option>
                     <option value="python" >파이썬개발자</option>
                     <option value="android" >안드로이드개발자</option>
