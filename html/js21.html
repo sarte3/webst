@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            document.getElementById('two').innerHTML='화면이 로드되었습니다';
+
+        }
+    </script>
+</head>
+<!--<body onload="init()">-->
+<body>
+<div id="one">
+    <p id="two">
+        클릭하세요
+    </p>
+</div>
+<pre>
+    html과 자바스크립트의 분리
+</pre>
+<script>
+    window.onload = function () { //onload 이벤트와 동일
+        document.getElementById('two').innerHTML='화면이 로드';
+    }
+
+    p = document.getElementById('two')
+    p.onclick = function(){
+        alert('클릭')
+    }
+    p.onmouseover = function (){
+        alert('마우스 들어옴')
+    }
+    p.onmouseout = function (){
+        alert('마우스 나감')
+    }
+    p.onmouseup = function (){
+        alert('마우스 뗌')
+    }
+    p.onmousedown = function (){
+        alert('마우스 나감')
+    }
+
+    //오른 버튼 막기
+    window.oncontextmenu=function() {
+        return false;
+    }
+
+    //onblur 포커스가 빠져나올 때
+</script>
+</body>
+</html>

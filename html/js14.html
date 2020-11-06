@@ -69,13 +69,16 @@
                 frm.submit();
             }
 
+        }
 
-
+        function idChk(){
+            if (document.member.id.value.length>5)
+                alert('아이디는 5글자')
         }
     </script>
 </head>
 <body onload="idFocus()">
-<form name="member" action="1015-1.html" onsubmit="return false">
+<form name="member" action="1015-1.html" onsubmit="return false" method="post">
     <table width="800" border="1">
         <tr>
             <td colspan = "2" style="text-align:center">회원가입</td>
@@ -83,7 +86,8 @@
         <tr>
             <td width="20%">사용자ID</td>
             <td width="80%">
-                <input type = "text" name = "id" maxlength="15">
+<!--                <input type = "text" name = "id" maxlength="15" onkeyup="idChk()">-->
+                <input type = "text" name = "id" maxlength="15" onblur="idChk()">
                 <input type = "button" value = "중복확인">
             </td>
         </tr>
