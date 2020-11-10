@@ -7,6 +7,12 @@
 </head>
 <script>
     $(function (){
+        $('input[type="reset"]').click(function(){
+           if(!confirm('정말로 초기화?')){
+               return false;
+           }
+        })
+
         $('#id').focus();
         /*
         $('input[type="text"]').keydown(function (e){
@@ -56,14 +62,27 @@
                 return false;
             }
 
-            return false;
+            str = '아이디 : '+$('#id').val()+'\n';
+            str += '비밀번호 : '+$('#pw').val()+'\n';
+            str += '주민번호 : '+$('#idno').val()+'\n';
+            str += '성별 : '+$('input[name="gender"]:checked').val()+'\n';
+            hobby = $('input[name="hobby"]:checked')
+            hobbystr = '취미 : ';
+            hobby.each(function (index, item){
+                hobbystr += $(this).val()+' ';
+            })
+            str += hobbystr+'\n';
+            str += '직업 : '+$('select[name="job"] > option:selected').val()
+
+            alert(str);
+
         })
 
     })
 </script>
 <body>
 <h1>회원 가입</h1>
-<form id="frm" onsubmit="return false;">
+<form id="frm" action="1015-1.html" >
 아이디 <input type="text" name="id" id="id"><br/>
 비밀번호 <input type="password" name="pw" id="pw"><br/>
 주민번호 <input type="text" name="idno" id="idno"><br/>
