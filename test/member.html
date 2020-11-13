@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function (){
+            $('#id').blur(function (){
+                if($(this).val().length<5||$(this).val().length>10){
+                    alert('아이디는 글자수 5개 이상 10개 이하입니다');
+                    $(this).focus();
+                }
+            })
+
+            $('#pw2').blur(function (){
+                if($('#pw1').val()!=$('#pw2').val()){
+                    alert('비밀번호가 일치하지 않습니다');
+                    $('#pw1').val('');
+                    $('#pw2').val('');
+                    $('#pw1').focus();
+                }
+            })
+
+            $('#name').blur(function (){
+                if($('#name').val().length>10){
+                    alert('이름은 10자를 초과할 수 없습니다')
+                    $('#name').focus();
+                }
+            })
+
+            $('#frm').submit(function (){
+                if($('#id').val()==''){
+                    alert('아이디를 입력하세요');
+                    $('#id').focus();
+                    return false;
+                }
+
+                if($('#pw1').val()==''||$('#pw2').val()==''){
+                    alert('비밀번호를 입력하세요');
+                    $('#pw1').focus();
+                    return false;
+                }
+
+                if($('#name').val()==''){
+                    alert('성명을 입력하세요');
+                    $('#name').focus();
+                    return false;
+                }
+
+                if($('#tel').val()==''){
+                    alert('휴대폰 번호를 확인하세요');
+                    return false;
+                }
+
+                if($('option:selected').val()==''){
+                    alert('통신사를 선택하세요');
+                    return false;
+                }
+
+                if(!$('input[name="gender"]').is(':checked')){
+                    alert('성별을 선택하세요');
+                    return false;
+                }
+
+                if(!$('input[name="int"]').is(':checked')){
+                    alert('관심 분야를 선택하세요');
+                    return false;
+                }
+
+                str = '아이디 : '+$('#id').val()+'\n';
+                str += '성명 : '+$('#name').val()+'\n';
+                str += '생년월일 : '+$('#year').val()+'년'+$('#mon').val()+'월'+$('#day').val()+'일'+'\n';
+                str += '휴대폰 번호 : '+$('option:selected').val()+$('#tel').val()+'\n';
+                str += '성별 : '+$('input[name="gender"]:checked').val()+'\n';
+                str += '관심분야 : '
+                int = $('input[name="int"]:checked')
+                int.each(function(){
+                    str+=$(this).val()+' ';
+                })
+
+                alert(str);
+            })
+        })
+    </script>
+</head>
+<body>
+<form action="member_ok.html" method="post" id="frm">
+<p>아이디 <input type="text" placeholder="아이디" name="id" id="id"></p>
+<p>비밀번호 <input type="password" name="pw1" id="pw1" size="12" maxlength="12"></p>
+<p>비밀번호 확인 <input type="password" name="pw2" id="pw2" size="12" maxlength="12"></p>
+<p>성명 <input type="text" name="name" id="name"></p>
+<p>생년월일 <input type="text" name="year" id="year">년 <input type="text" name="mon" id="mon">월 <input type="text" nmae="day" id="day"></p>
+<p>휴대폰 번호
+    <select>
+        <option value="">선택</option>
+        <option value="010">010</option>
+        <option value="011">011</option>
+        <option value="016">016</option>
+        <option value="017">017</option>
+        <option value="019">019</option>
+    </select>
+    <input type="tel" name="tel" id="tel">
+</p>
+<p>성별 <input type="radio" name="gender" value="남성">남성 <input type="radio" name="gender" value="여성">여성</p>
+<p>관심분야
+    <input type="checkbox" name="int" value="java">java
+    <input type="checkbox" name="int" value="python">python
+    <input type="checkbox" name="int" value="html">html
+    <input type="checkbox" name="int" value="javascript">javascript
+    <input type="checkbox" name="int" value="C#">C#
+</p>
+<p>
+    <input type="submit" value="회원 가입">
+    <input type="reset" value="다시 작성">
+</p>
+</form>
+</body>
+</html>
