@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function (){
+            $('#food').change(function (){
+                if($('.food')!=null){
+                    $('.food').remove();
+                }
+
+                if($(this).val()=='한식'){
+                    s1=$('<select>').addClass('food');
+                    o0=$('<option>').val('').html('-선택-');
+                    o1=$('<option>').val('불고기').html('불고기');
+                    o2=$('<option>').val('비빔밥').html('비빔밥');
+                    o3=$('<option>').val('해물찜').html('해물찜');
+                    s1.append(o0).append(o1).append(o2).append(o3);
+                    $('div').append(s1);
+                }else if($(this).val()=='분식'){
+                    s1=$('<select>').addClass('food');
+                    o0=$('<option>').val('').html('-선택-');
+                    o1=$('<option>').val('떡볶이').html('떡볶이');
+                    o2=$('<option>').val('튀김').html('튀김');
+                    o3=$('<option>').val('순대').html('순대');
+                    s1.append(o0).append(o1).append(o2).append(o3);
+                    $('div').append(s1);
+                }else if($(this).val()=='기타') {
+                    s1 = $('<select>').addClass('food');
+                    o0=$('<option>').val('').html('-선택-');
+                    o1 = $('<option>').val('샌드위치').html('샌드위치');
+                    o2 = $('<option>').val('짜장면').html('짜장면');
+                    o3 = $('<option>').val('만두').html('만두');
+                    s1.append(o0).append(o1).append(o2).append(o3);
+                    $('div').append(s1);
+                }
+
+            })
+
+            $(document).on('change','.food',function (){
+                if($(this).val()==''){
+                    alert('음식을 선택하세요!');
+                    return;
+                }
+                alert('좋아하는 음식 : '+$(this).val());
+
+            })
+        })
+    </script>
+</head>
+<body>
+<h1>가장 좋아하는 음식</h1>
+<div>
+<select id="food">
+    <option value="">-선택-</option>
+    <option value="한식">한식</option>
+    <option value="분식">분식</option>
+    <option value="기타">기타</option>
+</select>
+</div>
+</body>
+</html>
